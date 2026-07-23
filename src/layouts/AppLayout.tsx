@@ -20,18 +20,20 @@ export function AppLayout() {
   return (
     <div className="min-h-screen text-slate-900 dark:text-slate-100">
       {sidebarOpen && <button className="fixed inset-0 z-30 bg-slate-950/35 lg:hidden" aria-label="Close menu" onClick={() => setSidebarOpen(false)} />}
-      <aside className={cn('fixed inset-y-0 left-0 z-40 w-72 border-r border-white/10 bg-slate-950 text-white shadow-2xl shadow-slate-950/20 transition-transform lg:translate-x-0', sidebarOpen ? 'translate-x-0' : '-translate-x-full')}>
+      <aside className={cn('fixed inset-y-0 left-0 z-40 w-72 border-r border-white/10 bg-[#1a1a2e] text-white shadow-2xl shadow-slate-950/20 transition-transform lg:translate-x-0', sidebarOpen ? 'translate-x-0' : '-translate-x-full')}>
         <div className="flex h-16 items-center gap-3 border-b border-white/10 px-5">
-          <div className="flex h-10 w-10 items-center justify-center rounded-md bg-green-600 font-bold text-white shadow-lg shadow-green-900/30">U</div>
+          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10 font-bold text-white shadow-lg shadow-black/20">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
           <div>
-            <p className="text-sm font-bold">UMARA Management</p>
-            <p className="text-xs text-green-100/70">Tax Operations Suite</p>
+            <p className="text-sm font-bold">Umaratax</p>
+            <p className="text-[11px] text-slate-300">Management System</p>
           </div>
         </div>
-        <div className="mx-4 mt-4 rounded-lg border border-white/10 bg-white/[0.06] p-3">
-          <p className="text-xs font-semibold uppercase text-green-100/70">Workspace</p>
+        <div className="mx-4 mt-4 rounded-2xl border border-white/10 bg-white/[0.04] p-3">
+          <p className="text-xs font-semibold uppercase text-slate-400">Workspace</p>
           <p className="mt-1 text-sm font-bold">UMARA TAX</p>
-          <p className="mt-1 text-xs text-slate-300">Pajak, staff, absensi, dan point.</p>
+          <p className="mt-1 text-xs text-slate-400">Pajak, staff, absensi, dan point.</p>
         </div>
         <nav className="space-y-1 px-3 py-4">
           {navigation.map((item) => (
@@ -39,7 +41,7 @@ export function AppLayout() {
               key={item.href}
               to={item.href}
               onClick={() => setSidebarOpen(false)}
-              className={({ isActive }) => cn('flex items-center gap-3 rounded-md px-3 py-2.5 text-sm font-medium transition', isActive ? 'bg-green-600 text-white shadow-sm shadow-green-950/30' : 'text-slate-300 hover:bg-white/10 hover:text-white')}
+              className={({ isActive }) => cn('flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition', isActive ? 'bg-white/15 text-white shadow-sm' : 'text-slate-400 hover:bg-white/5 hover:text-white')}
             >
               <item.icon className="h-4 w-4" />
               {item.label}
@@ -47,8 +49,8 @@ export function AppLayout() {
           ))}
         </nav>
       </aside>
-      <div className="lg:pl-72">
-        <header className="sticky top-0 z-30 flex h-16 items-center gap-3 border-b border-white/70 bg-white/78 px-4 shadow-sm shadow-slate-900/5 backdrop-blur-xl dark:border-white/10 dark:bg-slate-950/72">
+      <div className="lg:pl-72 bg-slate-50 min-h-screen dark:bg-slate-950">
+        <header className="sticky top-0 z-30 flex h-16 items-center gap-3 border-b border-slate-200/70 bg-white/78 px-4 shadow-sm shadow-slate-900/5 backdrop-blur-xl dark:border-white/10 dark:bg-slate-950/72">
           <Button variant="ghost" size="icon" onClick={() => setSidebarOpen(true)} className="lg:hidden" aria-label="Open menu">
             <Menu className="h-5 w-5" />
           </Button>
@@ -63,7 +65,7 @@ export function AppLayout() {
             <Button variant="secondary" size="icon" aria-label="Notifications">
               <Bell className="h-4 w-4" />
             </Button>
-            <div className="hidden rounded-md border border-slate-200/80 bg-white/70 px-3 py-1.5 text-right shadow-sm dark:border-white/10 dark:bg-white/5 sm:block">
+            <div className="hidden rounded-xl border border-slate-200/80 bg-white/70 px-3 py-1.5 text-right shadow-sm dark:border-white/10 dark:bg-white/5 sm:block">
               <p className="text-sm font-semibold">{user?.name}</p>
               <p className="text-xs capitalize text-slate-500 dark:text-slate-400">{user?.role.replace('_', ' ')}</p>
             </div>

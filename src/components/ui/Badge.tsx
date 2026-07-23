@@ -9,5 +9,5 @@ const tones = {
 }
 
 export function Badge({ className, tone = 'slate', ...props }: HTMLAttributes<HTMLSpanElement> & { tone?: keyof typeof tones }) {
-  return <span className={cn('inline-flex items-center rounded px-2 py-1 text-xs font-semibold ring-1', tones[tone], className)} {...props} />
+  return <span className={cn('inline-flex items-center rounded-full px-2.5 py-1 text-xs font-semibold ring-1', tones[tone], className)} {...props} />
 }

@@ -3,13 +3,13 @@ import type { ButtonHTMLAttributes } from 'react'
 import { cn } from '../../utils/cn'
 
 const buttonVariants = cva(
-  'inline-flex h-10 items-center justify-center gap-2 rounded-md px-4 text-sm font-semibold transition-all duration-200 disabled:pointer-events-none disabled:opacity-60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-700/20 active:scale-[0.98]',
+  'inline-flex h-10 items-center justify-center gap-2 rounded-xl px-4 text-sm font-semibold transition-all duration-200 disabled:pointer-events-none disabled:opacity-60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-800/20 active:scale-[0.98]',
   {
     variants: {
       variant: {
-        primary: 'bg-green-700 text-white shadow-sm shadow-green-900/20 hover:bg-green-800 hover:shadow-md hover:shadow-green-900/20',
-        secondary: 'border border-slate-200/80 bg-white/85 text-slate-800 shadow-sm hover:border-green-700/20 hover:bg-green-50/70 dark:border-white/10 dark:bg-white/7 dark:text-slate-100 dark:hover:bg-white/12',
-        ghost: 'text-slate-700 hover:bg-green-50 hover:text-green-800 dark:text-slate-200 dark:hover:bg-white/10 dark:hover:text-white',
+        primary: 'bg-[#1a1a2e] text-white shadow-sm shadow-slate-900/20 hover:bg-[#2d2d4e] hover:shadow-md hover:shadow-slate-900/20',
+        secondary: 'border border-slate-200/80 bg-white/85 text-slate-800 shadow-sm hover:border-slate-800/20 hover:bg-slate-50/70 dark:border-white/10 dark:bg-white/7 dark:text-slate-100 dark:hover:bg-white/12',
+        ghost: 'text-slate-700 hover:bg-slate-100 hover:text-slate-900 dark:text-slate-200 dark:hover:bg-white/10 dark:hover:text-white',
       },
       size: {
         sm: 'h-8 px-3 text-xs',
